@@ -1,4 +1,4 @@
-# TortoiseGit commands for Visual Studio Code
+# Lockhunter commands for Visual Studio Code
 
 ## Introduction
 
@@ -20,8 +20,17 @@ Global shortcuts:
 
 ## Extension Settings
 
-This extension contributes the `lockhunter.launcherPath` setting, specifying the full path to `TortoiseGitProc.exe`.
+This extension contributes the `lockhunter.launcherPath` setting, specifying the full path to `Lockhunter.exe`.
 It is set to the default installation path of Lockhunter, so you might need to adjust it if you installed elsewhere.
+
+## Additional Settings 
+
+### Unlock
+`lockhunter.exit` exits lockhunter automatically after unlock , defaults to true 
+`lockhunter.silentunlocks` runs unlocks in silent mode , no window or confirmation will appear ,  defaults to false  
+
+
+
 
 ## TODO 
 - Add Context Menu Support for file and directory in browser and editor 
