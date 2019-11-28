@@ -30,40 +30,46 @@ export class Lockhunter {
         this.run("", PathType.withFileDirectoryPath);
     }
     public static unlockWorkspace(){
-        this.run("", PathType.withWorkSpacePath);
+        this.run("/unlock", PathType.withWorkSpacePath, true, true);
     }
     public static unlockFile(){
-        this.run("", PathType.withFilePath);
+        this.run("/unlock", PathType.withFilePath, true, true);
     }
     public static unlockFileDirectory(){
-        this.run("", PathType.withFileDirectoryPath);
+        this.run("/unlock", PathType.withFileDirectoryPath, true, true);
     }
     
 
 
 
-    private static run(command: string = null, pathType: PathType = PathType.withWorkSpacePath, additionalParams: string = null){
+    private static run(command: string = null, pathType: PathType = PathType.withWorkSpacePath, allowSilent :boolean = false, allowExit:boolean =false){
         
-        let targetPath = (requestedPathType: PathType, path :string) => {
+        let targetPath:string = null
 
-            switch (requestedPathType) {
+            switch (pathType) {
                 case PathType.withFileDirectoryPath: 
-                    return this.getWorkingFileDirectory()
+                    targetPath =  this.getWorkingFileDirectory()
+                    break;
                 case PathType.withWorkSpacePath: 
-                    return this.getWorkspaceDirectory()
+                    targetPath = this.getWorkspaceDirectory()
+                    break;
                 case PathType.withFilePath: 
-                    return this.getWorkingFile()
-                default: 
-                    return this.getWorkspaceDirectory()                    
-                
+                    targetPath = this.getWorkingFile()
+                    break;
+                default:
+                    targetPath = this.getWorkspaceDirectory()
+                    break;
             }
-        }
+        
 
         
         
         let launcherPath = vscode.workspace.getConfiguration("lockhunter").get("launcherPath");
-        let cmd = `"${launcherPath}" ${command}`;
-
+        
+        
+        let silent = allowSilent && (vscode.workspace.getConfiguration("lockhunter").get("silentunlocks") as boolean) ? '-sm' : '';
+        let exit = allowExit && vscode.workspace.getConfiguration("lockhunter").get("exit") as boolean ? '-x' : ''
+        let cmd = `"${launcherPath}" ${command} ${targetPath}  ${silent} ${exit}`;
 
         require("child_process").exec(cmd); 
     }
@@ -71,10 +77,6 @@ export class Lockhunter {
     private static getWorkspaceDirectory(){
         if (vscode.workspace.rootPath){
             return vscode.workspace.rootPath;
-        }
-        let currentFile = this.getWorkingFile();
-        if (currentFile){
-            return path.dirname(currentFile);
         }
         return null;
     }

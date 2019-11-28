@@ -17,12 +17,11 @@ Global shortcuts:
 * `Lockhunter (U)nlock (F)ile` - Ctrl+u Ctrl+d
 * `Lockhunter (U)nlock File (D)irectory` - Ctrl+u Ctrl+d
 * `Lockhunter (U)nlock (Workspace) Directory` - Ctrl+u Ctrl+d
-      
 
 ## Extension Settings
 
 This extension contributes the `lockhunter.launcherPath` setting, specifying the full path to `TortoiseGitProc.exe`.
 It is set to the default installation path of Lockhunter, so you might need to adjust it if you installed elsewhere.
 
-## Upcoming Features 
+## TODO 
 - Add Context Menu Support for file and directory in browser and editor 

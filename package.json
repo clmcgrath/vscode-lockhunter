@@ -1,5 +1,5 @@
 {
-  "name": "tgit-cmds",
+  "name": "lockhunter-cmds",
   "displayName": "Lockhunter Commands",
   "description": "Set of commands for launching Lockhunter dialogs",
   "keywords": [
@@ -15,9 +15,9 @@
     "url": "https://github.com/clmcgrath/vscode-lockhunter.git"
   },
   "bugs": {
-    "url": "https://github.com/mbinic/vscode-tgit/issues"
+    "url": "https://github.com/clmcgrath/vscode-lockhunter/issues"
   },
-  "homepage": "https://github.com/mbinic/vscode-tgit/blob/master/README.md",
+  "homepage": "https://github.com/clmcgrath/vscode-lockhunter",
   "license": "MIT",
   "icon": "vscode-lockhunter-icon.png",
   "engines": {
@@ -44,6 +44,16 @@
           "type": "string",
           "default": "C:\\Program Files\\LockHunter\\LockHunter.exe",
           "description": "Path to the Lockhunter command launcher (Lockhunter.exe)."
+        },
+        "lockhunter.exit": {
+          "type": "boolean",
+          "default": true,
+          "description": "Exits lockhunter automatically when all actions are done. This option might be required only when you wish to see the GUI, all displayed warnings but do not wish to press the button \"exit\" manually."
+        }, 
+        "lockhunter.silentunlocks": {
+          "type": "boolean",
+          "default": false,
+          "description": "no GUI will be displayed. The program starts in silent mode, does one of the passed commands (e.g. unlock) and terminates. does not apply to view commands."
         }
       }
     },
