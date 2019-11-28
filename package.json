@@ -1,24 +1,25 @@
 {
   "name": "tgit-cmds",
-  "displayName": "TortoiseGit Commands",
-  "description": "Set of commands for launching TortoiseGit dialogs",
+  "displayName": "Lockhunter Commands",
+  "description": "Set of commands for launching Lockhunter dialogs",
   "keywords": [
     "git",
-    "tortoise",
-    "keybindings"
+    "lockhunter",
+    "keybindings", 
+    "contextmenu"
   ],
-  "version": "1.2.2",
-  "publisher": "mbinic",
+  "version": "1.0.0",
+  "publisher": "clmcgrath",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mbinic/vscode-tgit.git"
+    "url": "https://github.com/clmcgrath/vscode-lockhunter.git"
   },
   "bugs": {
     "url": "https://github.com/mbinic/vscode-tgit/issues"
   },
   "homepage": "https://github.com/mbinic/vscode-tgit/blob/master/README.md",
   "license": "MIT",
-  "icon": "vscode-tgit-icon.png",
+  "icon": "vscode-lockhunter-icon.png",
   "engines": {
     "vscode": "^1.37.0"
   },
@@ -26,209 +27,76 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:tgit.fetch",
-    "onCommand:tgit.showLog",
-    "onCommand:tgit.showFileLog",
-    "onCommand:tgit.commit",
-    "onCommand:tgit.revert",
-    "onCommand:tgit.cleanup",
-    "onCommand:tgit.resolve",
-    "onCommand:tgit.switch",
-    "onCommand:tgit.merge",
-    "onCommand:tgit.diff",
-    "onCommand:tgit.blame",
-    "onCommand:tgit.pull",
-    "onCommand:tgit.push",
-    "onCommand:tgit.rebase",
-    "onCommand:tgit.stashSave",
-    "onCommand:tgit.stashPop",
-    "onCommand:tgit.stashList",
-    "onCommand:tgit.sync",
-    "onCommand:tgit.bisectStart",
-    "onCommand:tgit.bisectGood",
-    "onCommand:tgit.bisectBad",
-    "onCommand:tgit.bisectSkip",
-    "onCommand:tgit.bisectReset"
+    "onCommand:lockhunter.view.current.directory",
+    "onCommand:lockhunter.view.current.file",
+    "onCommand:lockhunter.view.current.workspace",
+    "onCommand:lockhunter.view.current.directory",
+    "onCommand:lockhunter.view.current.file",
+    "onCommand:lockhunter.view.current.workspace"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "TortoiseGit",
+      "title": "Lockhunter",
       "properties": {
-        "tgit.launcherPath": {
+        "lockhunter.launcherPath": {
           "type": "string",
-          "default": "C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe",
-          "description": "Path to the TortoiseGit command launcher (TortoiseGitProc.exe)."
+          "default": "C:\\Program Files\\LockHunter\\LockHunter.exe",
+          "description": "Path to the Lockhunter command launcher (Lockhunter.exe)."
         }
       }
     },
     "commands": [
       {
-        "command": "tgit.fetch",
-        "title": "TGit: Fetch"
+        "command": "lockhunter.view.current.directory",
+        "title": "Lockhunter: Current Directory"
       },
       {
-        "command": "tgit.showLog",
-        "title": "TGit: Show Log"
+        "command": "lockhunter.view.current.file",
+        "title": "Lockhunter: View Current Directory Locks"
       },
       {
-        "command": "tgit.showFileLog",
-        "title": "TGit: Show File Log"
+        "command": "lockhunter.view.current.workspace",
+        "title": "Lockhunter: View Current Directory"
+      },     
+      {
+        "command": "lockhunter.view.current.directory",
+        "title": "Lockhunter: View Current Directory"
       },
       {
-        "command": "tgit.commit",
-        "title": "TGit: Commit"
+        "command": "lockhunter.view.current.file",
+        "title": "Lockhunter: View Current Directory Locks"
       },
       {
-        "command": "tgit.revert",
-        "title": "TGit: Revert"
-      },
-      {
-        "command": "tgit.cleanup",
-        "title": "TGit: Clean Up"
-      },
-      {
-        "command": "tgit.resolve",
-        "title": "TGit: Resolve"
-      },
-      {
-        "command": "tgit.switch",
-        "title": "TGit: Switch/Checkout"
-      },
-      {
-        "command": "tgit.merge",
-        "title": "TGit: Merge"
-      },
-      {
-        "command": "tgit.diff",
-        "title": "TGit: File Diff"
-      },
-      {
-        "command": "tgit.blame",
-        "title": "TGit: Blame"
-      },
-      {
-        "command": "tgit.pull",
-        "title": "TGit: Pull"
-      },
-      {
-        "command": "tgit.push",
-        "title": "TGit: Push"
-      },
-      {
-        "command": "tgit.rebase",
-        "title": "TGit: Rebase"
-      },
-      {
-        "command": "tgit.stashSave",
-        "title": "TGit: Stash Save"
-      },
-      {
-        "command": "tgit.stashPop",
-        "title": "TGit: Stash Pop"
-      },
-      {
-        "command": "tgit.stashList",
-        "title": "TGit: Stash List"
-      },
-      {
-        "command": "tgit.sync",
-        "title": "TGit: Sync"
-      },
-      {
-        "command": "tgit.bisectStart",
-        "title": "TGit: Bisect Start"
-      },
-      {
-        "command": "tgit.bisectGood",
-        "title": "TGit: Bisect Good"
-      },
-      {
-        "command": "tgit.bisectBad",
-        "title": "TGit: Bisect Bad"
-      },
-      {
-        "command": "tgit.bisectSkip",
-        "title": "TGit: Bisect Skip"
-      },
-      {
-        "command": "tgit.bisectReset",
-        "title": "TGit: Bisect Reset"
+        "command": "lockhunter.view.current.workspace",
+        "title": "Lockhunter: View Current Directory"
       }
     ],
     "keybindings": [
       {
-        "command": "tgit.fetch",
-        "key": "ctrl+g ctrl+f"
+        "command": "lockhunter.view.currentDirectory",
+        "key": "ctrl+v ctrl+d"
       },
       {
-        "command": "tgit.showLog",
-        "key": "ctrl+g ctrl+l"
+        "command": "lockhunter.view.currentFile",
+        "key": "ctrl+v ctrl+f"
       },
       {
-        "command": "tgit.showFileLog",
-        "key": "ctrl+shift+alt+g ctrl+shift+alt+l"
+        "command": "lockhunter.view.workspace",
+        "key": "ctrl+v ctrl+w"
       },
       {
-        "command": "tgit.commit",
-        "key": "ctrl+g ctrl+c"
+        "command": "lockhunter.unlock.currentDirectory",
+        "key": "ctrl+u ctrl+d"
       },
       {
-        "command": "tgit.revert",
-        "key": "ctrl+g ctrl+v"
+        "command": "lockhunter.unlock.currentFile",
+        "key": "ctrl+u ctrl+f"
       },
       {
-        "command": "tgit.cleanup",
-        "key": "ctrl+g ctrl+n"
-      },
-      {
-        "command": "tgit.resolve",
-        "key": "ctrl+g ctrl+e"
-      },
-      {
-        "command": "tgit.switch",
-        "key": "ctrl+g ctrl+s"
-      },
-      {
-        "command": "tgit.merge",
-        "key": "ctrl+g ctrl+m"
-      },
-      {
-        "command": "tgit.diff",
-        "key": "ctrl+shift+alt+g ctrl+shift+alt+d"
-      },
-      {
-        "command": "tgit.blame",
-        "key": "ctrl+shift+alt+g ctrl+shift+alt+b"
-      },
-      {
-        "command": "tgit.pull",
-        "key": "ctrl+g ctrl+p"
-      },
-      {
-        "command": "tgit.push",
-        "key": "ctrl+g ctrl+u"
-      },
-      {
-        "command": "tgit.rebase",
-        "key": "ctrl+g ctrl+r"
-      },
-      {
-        "command": "tgit.stashSave",
-        "key": "ctrl+g ctrl+a"
-      },
-      {
-        "command": "tgit.stashPop",
-        "key": "ctrl+g ctrl+o"
-      },
-      {
-        "command": "tgit.stashList",
-        "key": "ctrl+g ctrl+i"
-      },
-      {
-        "command": "tgit.sync",
-        "key": "ctrl+g ctrl+y"
+        "command": "lockhunter.unlock.workspace",
+        "key": "ctrl+u ctrl+w"
       }
     ]
   },
