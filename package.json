@@ -30,9 +30,9 @@
     "onCommand:lockhunter.view.current.directory",
     "onCommand:lockhunter.view.current.file",
     "onCommand:lockhunter.view.current.workspace",
-    "onCommand:lockhunter.view.current.directory",
-    "onCommand:lockhunter.view.current.file",
-    "onCommand:lockhunter.view.current.workspace"
+    "onCommand:lockhunter.unlock.current.directory",
+    "onCommand:lockhunter.unlock.current.file",
+    "onCommand:lockhunter.unlock.current.workspace"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -49,28 +49,30 @@
     },
     "commands": [
       {
-        "command": "lockhunter.view.current.directory",
-        "title": "Lockhunter: Current Directory"
-      },
-      {
         "command": "lockhunter.view.current.file",
-        "title": "Lockhunter: View Current Directory Locks"
+        "title": "Lockhunter: View Current File"
       },
-      {
-        "command": "lockhunter.view.current.workspace",
-        "title": "Lockhunter: View Current Directory"
-      },     
+
       {
         "command": "lockhunter.view.current.directory",
         "title": "Lockhunter: View Current Directory"
       },
       {
-        "command": "lockhunter.view.current.file",
-        "title": "Lockhunter: View Current Directory Locks"
+        "command": "lockhunter.view.current.workspace",
+        "title": "Lockhunter: View Workspace"
+      },
+
+      {
+        "command": "lockhunter.unlock.current.file",
+        "title": "Lockhunter: Unlock Current File"
       },
       {
-        "command": "lockhunter.view.current.workspace",
-        "title": "Lockhunter: View Current Directory"
+        "command": "lockhunter.unlock.current.directory",
+        "title": "Lockhunter: Unlock Current Directory"
+      },
+      {
+        "command": "lockhunter.unlock.current.workspace",
+        "title": "Lockhunter: Unlock Workspace"
       }
     ],
     "keybindings": [

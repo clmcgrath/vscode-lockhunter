@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Inspired by the [TortoiseGit Toolbar Visual Studio extension](https://github.com/MRCollective/TortoiseGitToolbar), this extension provides commands for launching common TortoiseGit dialogs from within Visual Studio Code.
+This project is a fork of the tgit extension and modified for use with lockhunter 
 
-You can execute these commands either by searching for `TGit` in the Command Palette (`Ctrl+Shift+P`), or via keyboard shortcuts.
+You can execute these commands either by searching for `Lockhunter` in the Command Palette (`Ctrl+Shift+P`), or via keyboard shortcuts.
 
 ## Default shortcuts
 
@@ -23,3 +23,6 @@ Global shortcuts:
 
 This extension contributes the `lockhunter.launcherPath` setting, specifying the full path to `TortoiseGitProc.exe`.
 It is set to the default installation path of Lockhunter, so you might need to adjust it if you installed elsewhere.
+
+## Upcoming Features 
+- Add Context Menu Support for file and directory in browser and editor 
