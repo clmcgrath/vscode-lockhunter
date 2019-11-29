@@ -24,7 +24,7 @@ export class Lockhunter {
         this.run("", PathType.withWorkSpacePath);
     }
     public static viewFile(){
-        this.run(""), PathType.withFilePath;
+        this.run("", PathType.withFilePath);
     }
     public static viewFileDirectory(){
         this.run("", PathType.withFileDirectoryPath);
