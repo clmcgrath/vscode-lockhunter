@@ -3,6 +3,7 @@ trigger:
 pool:
   vmImage: Ubuntu-16.04
 steps:
+
   - task: GitVersion@5
     inputs:
       runtime: 'core'
@@ -49,13 +50,10 @@ steps:
     inputs:
       Contents: '*.vsix'
       TargetFolder: $(Build.ArtifactStagingDirectory)
+      CleanTargetFolder: true
   
-  - task: CopyFiles@2
-    inputs:
-      Contents: 'package.json'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-
+    
 
   - task: PublishBuildArtifacts@1
     inputs:
