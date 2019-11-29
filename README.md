@@ -27,6 +27,7 @@ It is set to the default installation path of Lockhunter, so you might need to a
 
 ### Unlock
 `lockhunter.exit` exits lockhunter automatically after unlock , defaults to true 
+
 `lockhunter.silentunlocks` runs unlocks in silent mode , no window or confirmation will appear ,  defaults to false  
 
 
