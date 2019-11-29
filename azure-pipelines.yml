@@ -10,19 +10,11 @@ steps:
       useConfigFile: true
       configFilePath: 'GitVersion.yml'
 
-  - task: setjsonvalue@1
-    inputs:
-      filename: 'package.json'
-      numberOfLevels: '1'
-      keyname1: 'version'
-      valueToSet: '$(GitVersion.MajorMinorPatch)'
-
   -
     task: NodeTool@0
     inputs:
       versionSpec: 12.x
     displayName: 'Install Node.js'
-
 
   -
     task: YarnInstaller@3
@@ -52,9 +44,6 @@ steps:
       TargetFolder: $(Build.ArtifactStagingDirectory)
       CleanTargetFolder: true
   
-
-    
-
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
