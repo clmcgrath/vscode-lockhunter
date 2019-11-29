@@ -32,7 +32,7 @@ steps:
   -
     task: CopyFiles@2
     inputs:
-      Contents: '*.vsix'
+      Contents: '*.vsix,package.json'
       TargetFolder: $(Build.ArtifactStagingDirectory)
   -
     task: PublishBuildArtifacts@1
