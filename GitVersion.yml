@@ -1,2 +1,2 @@
-mode: ContinuousDelivery
+mode: Mainline
 assembly-versioning-scheme: MajorMinorPatchTag
