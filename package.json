@@ -118,9 +118,9 @@
     "vscode:publish": "vsce publish"
   },
   "devDependencies": {
-    "typescript": "^3.3.1",
-    "@types/vscode": "^1.37.0",
     "@types/node": "^10.12.21",
+    "@types/vscode": "^1.37.0",
+    "typescript": "^3.3.1",
     "vsce": "^1.66.0"
   }
 }
