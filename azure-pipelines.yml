@@ -14,12 +14,28 @@ steps:
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
+- task: YarnInstaller@3
+  inputs:
+    versionSpec: '1.x'
+    checkLatest: true
+  displayName: 'Install Latest Yarn'
 
-- script: |
-    yarn install
-    yarn run vscode:prepublish
-    yarn run vscode:package -o $(Build.ArtifactStagingDirectory)
-  displayName: 'Build Package'
+- task: Yarn@3
+  inputs:
+    arguments: 'install'
+  displayName: 'yarn install'
+
+- task: Yarn@3
+  inputs:
+    arguments: 'vscode:prepublish'
+  displayName: 'yarn vscode:prepublish'
+
+- task: Yarn@3
+  inputs:
+    arguments: 'vscode:package'
+  displayName: 'yarn vscode:prepublish -o $(Build.ArtifactStagingDirectory)'
+
+
 
 - task: PublishBuildArtifacts@1
   inputs:
