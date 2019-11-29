@@ -1,7 +1,10 @@
 trigger:
   - master
+  - stable
+  - dev
+
 pool:
-  vmImage: Ubuntu-16.04
+  vmImage: Ubuntu-18.04
 steps:
 
   - task: GitVersion@5
@@ -10,6 +13,12 @@ steps:
       useConfigFile: true
       configFilePath: 'GitVersion.yml'
 
+  - task: setjsonvalue@1
+    inputs:
+      filename: 'package.json'
+      numberOfLevels: '1'
+      keyname1: 'version'
+      valueToSet: '$(GitVersion.FullSemVer)'
   -
     task: NodeTool@0
     inputs:
