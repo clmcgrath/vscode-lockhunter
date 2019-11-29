@@ -27,16 +27,12 @@ steps:
     inputs:
       arguments: install
     displayName: 'yarn install'
-  -
-    task: Yarn@3
-    inputs:
-      arguments: 'vscode:prepublish'
-    displayName: 'yarn vscode:prepublish'
+  
   -
     task: Yarn@3
     inputs:
       arguments: 'vscode:package'
-    displayName: 'yarn vscode:package'
+    displayName: 'yarn vscode:package '
   -
     task: CopyFiles@2
     inputs:
