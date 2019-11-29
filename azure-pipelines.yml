@@ -9,11 +9,12 @@ steps:
       useConfigFile: true
       configFilePath: 'GitVersion.yml'
 
-  - task: SetJsonProperty@1
+  - task: setjsonvalue@1
     inputs:
-      JsonFile: 'package.json'
-      PropertyPath: 'version'
-      PropertyValue: '$(GitVersion.MajorMinorPatch)'
+      filename: 'package.json'
+      numberOfLevels: '1'
+      keyname1: 'version'
+      valueToSet: '$(GitVersion.MajorMinorPatch)'
 
   -
     task: NodeTool@0
