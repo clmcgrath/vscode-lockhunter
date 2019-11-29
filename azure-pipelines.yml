@@ -1,44 +1,42 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
-- master
-
+  - master
 pool:
-  vmImage: 'Ubuntu-16.04'
-
+  vmImage: Ubuntu-16.04
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '12.x'
-  displayName: 'Install Node.js'
-- task: YarnInstaller@3
-  inputs:
-    versionSpec: '1.x'
-    checkLatest: true
-  displayName: 'Install Latest Yarn'
-
-- task: Yarn@3
-  inputs:
-    arguments: 'install'
-  displayName: 'yarn install'
-
-- task: Yarn@3
-  inputs:
-    arguments: 'vscode:prepublish'
-  displayName: 'yarn vscode:prepublish'
-
-- task: Yarn@3
-  inputs:
-    arguments: 'vscode:package -o $(Build.ArtifactStagingDirectory)'
-  displayName: 'yarn vscode:package'
-
-
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'packages'
-    publishLocation: 'Container'
+  -
+    task: NodeTool@0
+    inputs:
+      versionSpec: 12.x
+    displayName: 'Install Node.js'
+  -
+    task: YarnInstaller@3
+    inputs:
+      versionSpec: 1.x
+      checkLatest: true
+    displayName: 'Install Latest Yarn'
+  -
+    task: Yarn@3
+    inputs:
+      arguments: install
+    displayName: 'yarn install'
+  -
+    task: Yarn@3
+    inputs:
+      arguments: 'vscode:prepublish'
+    displayName: 'yarn vscode:prepublish'
+  -
+    task: Yarn@3
+    inputs:
+      arguments: 'vscode:package'
+    displayName: 'yarn vscode:package'
+  -
+    task: CopyFiles@2
+    inputs:
+      Contents: '*.vsix'
+      TargetFolder: $(Build.ArtifactStagingDirectory)
+  -
+    task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)
+      ArtifactName: packages
+      publishLocation: Container
