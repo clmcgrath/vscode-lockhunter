@@ -18,5 +18,11 @@ steps:
 - script: |
     yarn install
     yarn run vscode:prepublish
-    yarn run vscode:package
+    yarn run vscode:package -o $(Build.ArtifactStagingDirectory)
   displayName: 'Build Package'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'packages'
+    publishLocation: 'Container'
