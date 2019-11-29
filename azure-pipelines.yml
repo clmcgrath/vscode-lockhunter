@@ -32,8 +32,8 @@ steps:
 
 - task: Yarn@3
   inputs:
-    arguments: 'vscode:package'
-  displayName: 'yarn vscode:prepublish -o $(Build.ArtifactStagingDirectory)'
+    arguments: 'vscode:package -o $(Build.ArtifactStagingDirectory)'
+  displayName: 'yarn vscode:package'
 
 
 
