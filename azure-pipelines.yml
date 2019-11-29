@@ -8,7 +8,13 @@ steps:
       runtime: 'core'
       useConfigFile: true
       configFilePath: 'GitVersion.yml'
-      
+
+  - task: SetJsonProperty@1
+    inputs:
+      JsonFile: 'package.json'
+      PropertyPath: 'version'
+      PropertyValue: '$(GitVersion.MajorMinorPatch)'
+
   -
     task: NodeTool@0
     inputs:
