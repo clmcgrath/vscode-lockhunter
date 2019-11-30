@@ -10,13 +10,13 @@ You can execute these commands either by searching for `Lockhunter` in the Comma
 
 Global shortcuts:
 
-* `Lockhunter (V)iew (F)ile` - Ctrl+v Ctrl+f
-* `Lockhunter (V)iew File (D)irectory` - Ctrl+v Ctrl+d
-* `Lockhunter (V)iew (W)orkspace` - Ctrl+v, Ctrl+w
+* `(L)ockhunter (V)iew (F)ile` -Crtl+l Ctrl+v Ctrl+f
+* `(L)ockhunter (V)iew File (D)irectory` -Crtl+l Ctrl+v Ctrl+d
+* `(L)ockhunter (V)iew (W)orkspace` -Crtl+l Ctrl+v, Ctrl+w
 
-* `Lockhunter (U)nlock (F)ile` - Ctrl+u Ctrl+d
-* `Lockhunter (U)nlock File (D)irectory` - Ctrl+u Ctrl+d
-* `Lockhunter (U)nlock (Workspace) Directory` - Ctrl+u Ctrl+d
+* `(L)ockhunter (U)nlock (F)ile` -Crtl+l Ctrl+u Ctrl+d
+* `(L)ockhunter (U)nlock File (D)irectory` -Crtl+l Ctrl+u Ctrl+d
+* `(L)ockhunter (U)nlock (Workspace) Directory` -Crtl+l Ctrl+u Ctrl+d
 
 ## Extension Settings
 
