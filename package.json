@@ -86,27 +86,27 @@
     "keybindings": [
       {
         "command": "lockhunter.view.currentDirectory",
-        "key": "ctrl+v ctrl+d"
+        "key": "ctrl+l ctrl+v ctrl+d "
       },
       {
         "command": "lockhunter.view.currentFile",
-        "key": "ctrl+v ctrl+f"
+        "key": "ctrl+l ctrl+v ctrl+f"
       },
       {
         "command": "lockhunter.view.workspace",
-        "key": "ctrl+v ctrl+w"
+        "key": "ctrl+l ctrl+v ctrl+w"
       },
       {
         "command": "lockhunter.unlock.currentDirectory",
-        "key": "ctrl+u ctrl+d"
+        "key": "ctrl+l ctrl+u ctrl+d"
       },
       {
         "command": "lockhunter.unlock.currentFile",
-        "key": "ctrl+u ctrl+f"
+        "key": "ctrl+l ctrl+u ctrl+f"
       },
       {
         "command": "lockhunter.unlock.workspace",
-        "key": "ctrl+u ctrl+w"
+        "key": "ctrl+l ctrl+u ctrl+w"
       }
     ]
   },
