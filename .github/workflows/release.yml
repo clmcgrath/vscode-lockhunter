@@ -1,0 +1,27 @@
+name: CI
+  
+  
+on:
+  release:
+    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
+    types: [published]
+    branches: master
+  
+  
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+       
+  publish:
+    runs-on: [ubuntu-latest]
+    steps:
+        - uses: actions/checkout@v1
+        - name: Publish to Visual Studio marketplace 
+        - run: yarn install
+        - run: yarn publish --pat ${{ secrets.PUBLISH_TOKEN}}
+            
+     
+         
+          
+
